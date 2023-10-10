@@ -97,3 +97,15 @@ function createBoard() {
   });
 }
 createBoard();
+
+const allSquares = document.querySelectorAll("#gameBoard .square");
+
+allSquares.forEach((square) => {
+  square.addEventListener("dragstart", dragStart);
+});
+
+let startPositionId;
+
+function dragStart(e) {
+  startPositionId = e.target.parentNode.getAttribute("square-id");
+}
