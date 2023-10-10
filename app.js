@@ -72,3 +72,10 @@ const startPeices = [
   knight,
   rook,
 ];
+
+function createBoard() {
+  startPeices.forEach((startPeice) => {
+    const square = document.createElement("div");
+    square.classList.add("square");
+  });
+}
