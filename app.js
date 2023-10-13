@@ -103,6 +103,7 @@ const allSquares = document.querySelectorAll("#gameBoard .square");
 allSquares.forEach((square) => {
   square.addEventListener("dragstart", dragStart);
   square.addEventListener("dragover", dragOver);
+  square.addEventListener("drop", dragDrop);
 });
 
 let startPositionId;
@@ -113,6 +114,8 @@ function dragStart(e) {
   draggedElement = e.target;
 }
 
-function dragOver() {
-  e.preventDefault;
+function dragOver(e) {
+  e.preventDefault();
 }
+
+function dragDrop() {}
