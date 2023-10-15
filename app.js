@@ -118,4 +118,9 @@ function dragOver(e) {
   e.preventDefault();
 }
 
-function dragDrop() {}
+function dragDrop(e) {
+  e.stopPropagation();
+
+  // e.target.parentNode.append(draggedElement);
+  e.target.append(draggedElement);
+}
