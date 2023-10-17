@@ -6,6 +6,9 @@ const infoDisplay = document.querySelector("#info-display");
 
 const width = 8;
 
+let playerGo = "black";
+playerDisplay.textContent = "black";
+
 const startPeices = [
   rook,
   knight,
@@ -120,8 +123,10 @@ function dragOver(e) {
 
 function dragDrop(e) {
   e.stopPropagation();
+  console.log(e.target);
 
   // e.target.parentNode.append(draggedElement);
-  e.target.parentNode.append(draggedElement);
-  e.target.remove();
+  // e.target.parentNode.append(draggedElement);
+  // e.target.remove();
+  const taken = e.target.classList("peice");
 }
