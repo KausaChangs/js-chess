@@ -129,4 +129,15 @@ function dragDrop(e) {
   // e.target.parentNode.append(draggedElement);
   // e.target.remove();
   const taken = e.target.classList("peice");
+  changePlayer();
+}
+
+function changePlayer() {
+  if (playerGo == "black") {
+    playerDisplay = "white";
+    playerDisplay.textContent = "white";
+  } else {
+    playerGo = "black";
+    playerDisplay.textContent = "black";
+  }
 }
