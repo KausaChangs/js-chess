@@ -143,9 +143,15 @@ function changePlayer() {
 }
 
 function reverseIds() {
-  const allSquares = document.querySelectorAll(".sqaure");
+  const allSquares = document.querySelectorAll(".square");
 
   allSquares.forEach((square, i) =>
     square.setAttribute("square-id", width * width - 1 - 1)
   );
+}
+
+function revertIds() {
+  const allSquares = document.querySelectorAll(".square");
+
+  allSquares.forEach((square, i) => square.setAttribute("square-id", i));
 }
