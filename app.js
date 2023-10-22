@@ -144,4 +144,8 @@ function changePlayer() {
 
 function reverseIds() {
   const allSquares = document.querySelectorAll(".sqaure");
+
+  allSquares.forEach((square, i) =>
+    square.setAttribute("square-id", width * width - 1 - 1)
+  );
 }
