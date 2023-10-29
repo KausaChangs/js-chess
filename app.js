@@ -134,9 +134,11 @@ function dragDrop(e) {
 
 function changePlayer() {
   if (playerGo === "black") {
+    reverseIds();
     playerGo = "white";
     playerDisplay.textContent = "white";
   } else {
+    revertIds();
     playerGo = "black";
     playerDisplay.textContent = "black";
   }
