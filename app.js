@@ -128,6 +128,7 @@ function dragDrop(e) {
   const correctGoal = draggedElement.firstChild.classList.contains(playerGo);
   const taken = e.target.classList.contains("piece");
   const opponentGo = playerGo === "white" ? "black" : "white";
+  const valid = checkIfValid(e.target);
   const takenByOpponent = e.target.firstChild?.classList.contains(opponentGo);
 
   if (correctGoal) {
@@ -150,6 +151,8 @@ function dragDrop(e) {
     }
   }
 }
+
+function checkIfValid() {}
 
 function changePlayer() {
   if (playerGo === "black") {
