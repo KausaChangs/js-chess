@@ -127,11 +127,20 @@ function dragDrop(e) {
 
   const correctGoal = draggedElement.firstChild.classList.contains(playerGo);
   const taken = e.target.classList.contains("peice");
-  const opponnentGo = playerGo === "white" ? "black" : "white";
+  const opponentGo = playerGo === "white" ? "black" : "white";
+  const takenByOpponent = e.target.firstChild?.classList.contains(opponentGo);
+
+  if (correctGoal) {
+    //must check this first
+    if (takenByOpponent && valid) {
+      e.target.parentNode.append(draggedElement);
+      e.target.remove();
+      changePlayer();
+      return;
+    }
+  }
 
   // e.target.parentNode.append(draggedElement);
-  // e.target.parentNode.append(draggedElement);
-  // e.target.remove();
 
   changePlayer();
 }
