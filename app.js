@@ -138,11 +138,15 @@ function dragDrop(e) {
       changePlayer();
       return;
     }
+    //then check this
+    if (taken) {
+      infoDisplay.textContent = "you cannot go here!";
+      setTimeout(() => (infoDisplay.textContent = ""), 2000);
+      return;
+    }
   }
 
   // e.target.parentNode.append(draggedElement);
-
-  changePlayer();
 }
 
 function changePlayer() {
