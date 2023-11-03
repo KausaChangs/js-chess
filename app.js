@@ -123,12 +123,16 @@ function dragOver(e) {
 
 function dragDrop(e) {
   e.stopPropagation();
-  console.log(e.target);
+  console.log(draggedElement);
+
+  const correctGoal = draggedElement.firstChild.classList.contains(playerGo);
+  const taken = e.target.classList.contains("peice");
+  const opponnentGo = playerGo === "white" ? "black" : "white";
 
   // e.target.parentNode.append(draggedElement);
   // e.target.parentNode.append(draggedElement);
   // e.target.remove();
-  const taken = e.target.classList("peice");
+
   changePlayer();
 }
 
