@@ -126,7 +126,7 @@ function dragDrop(e) {
   console.log(draggedElement);
 
   const correctGoal = draggedElement.firstChild.classList.contains(playerGo);
-  const taken = e.target.classList.contains("peice");
+  const taken = e.target.classList.contains("piece");
   const opponentGo = playerGo === "white" ? "black" : "white";
   const takenByOpponent = e.target.firstChild?.classList.contains(opponentGo);
 
@@ -139,14 +139,16 @@ function dragDrop(e) {
       return;
     }
     //then check this
-    if (taken) {
+    if (taken && !takenByOpponent) {
       infoDisplay.textContent = "you cannot go here!";
       setTimeout(() => (infoDisplay.textContent = ""), 2000);
       return;
     }
-  }
 
-  // e.target.parentNode.append(draggedElement);
+    if (valid) {
+      e.target.append(draggedElement);
+    }
+  }
 }
 
 function changePlayer() {
